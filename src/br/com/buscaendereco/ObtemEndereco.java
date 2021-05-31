@@ -57,7 +57,7 @@ public class ObtemEndereco {
             System.out.println("Sem conexão com o servidor, ou CEP inexistente!");
         }else{
             //Obtendo as informações da API, e adicionando-as em Strings
-            String cepObt = (String) obj.get("cep");
+            String cepObtido = (String) obj.get("cep");
             String logradouro = (String) obj.get("logradouro");
             String complemento = (String) obj.get("complemento");
             String bairro = (String) obj.get("bairro");
@@ -69,7 +69,7 @@ public class ObtemEndereco {
             //Cria um endereço
             Endereco endereco = new Endereco();
             //Chama o método para adicionar as informações ao endereço criado
-            endereco.setEndereco(cepObt, logradouro, complemento, bairro, localidade, uf, ddd, ibge);
+            endereco.setEndereco(cepObtido, logradouro, complemento, bairro, localidade, uf, ddd, ibge);
             //Imprime para o usuário o endereço adicionado
             System.out.println(endereco.getEndereco(endereco));
         }
